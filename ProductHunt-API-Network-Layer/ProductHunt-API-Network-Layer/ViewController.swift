@@ -76,8 +76,8 @@ class ViewController: UIViewController {
 
         // Table View
         tableView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        tableView.allowsSelection = false
+//        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+//        tableView.allowsSelection = false
         //        var refreshControl = UIRefreshControl()
         //        tableView.refreshControl = refreshControl
         //        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)

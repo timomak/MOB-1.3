@@ -120,7 +120,7 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     //     Table View Cell Styling
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 250
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         print("Deselected")

@@ -24,27 +24,43 @@ class CommentsViewController: UIViewController {
     
     let cellId = "CommentCell"
     
-    var comments: [String]! = [] {
+    var comments: [Comment] = [] {
         didSet {
-            
+            tableView.reloadData()
+        }
+    }
+    
+    var postID: Int!
+    
+    var networkManager = NetworkManager()
+    
+    func updateComments() {
+        networkManager.getComments(postID) { result in
+            switch result {
+            case let .success(comments):
+                self.comments = comments
+            case let .failure(error):
+                print(error)
+            }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.7409107685, green: 0.6965670586, blue: 1, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
         // Go back button
         view.addSubview(goBackButton)
-        goBackButton.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 15, left: 20, bottom: 0, right: 0))
+        goBackButton.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 30, left: 20, bottom: 0, right: 0))
         
         addtableView()
+        updateComments()
     }
     func addtableView() {
         // Add to Table View to View
         view.addSubview(tableView)
         
         // Table View Size
-        tableView.anchor(top: goBackButton.bottomAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: 0))
+        tableView.anchor(top: goBackButton.bottomAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0))
         
         // Register Table View Cells
         tableView.register(CommentTableViewCell.self, forCellReuseIdentifier: cellId)
@@ -81,7 +97,7 @@ extension CommentsViewController: UITableViewDataSource {
         
         let comment = comments[indexPath.row]
         // Set the cell label text
-        cell.name.text = comment
+        cell.name.text = comment.body
         //        cell.selectionStyle = .none
         // Push your cell to the table view
         return cell

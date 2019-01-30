@@ -65,7 +65,12 @@ class FeedViewController: UIViewController {
     
     func updateFeed() {
         networkManager.getPosts() { result in
-            self.posts = result
+            switch result {
+            case let .success(posts):
+                self.posts = posts
+            case let .failure(error):
+                print(error)
+            }
         }
     }
     
@@ -156,7 +161,7 @@ extension FeedViewController: UITableViewDelegate {
         print(indexPath.row)
         
         var commentsView = CommentsViewController()
-        commentsView.comments = ["Blah blah blah!", "Good app.", "Wow."]
+        commentsView.postID = post.id
         self.present(commentsView, animated: true)
     }
 }

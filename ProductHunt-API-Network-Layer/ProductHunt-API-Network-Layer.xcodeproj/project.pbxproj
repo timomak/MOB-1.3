@@ -17,6 +17,7 @@
 		F3D16CA622014DD200EFF17E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D16CA522014DD200EFF17E /* NetworkManager.swift */; };
 		F3D16CA82201577600EFF17E /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D16CA72201577600EFF17E /* CommentsViewController.swift */; };
 		F3D16CAA2201591800EFF17E /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D16CA92201591800EFF17E /* CommentTableViewCell.swift */; };
+		F3D16CAC22015BCD00EFF17E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D16CAB22015BCD00EFF17E /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F3D16CA522014DD200EFF17E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F3D16CA72201577600EFF17E /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		F3D16CA92201591800EFF17E /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		F3D16CAB22015BCD00EFF17E /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				F3327B852201101B007E26AD /* AppDelegate.swift */,
 				F3D16CA32201146500EFF17E /* Post.swift */,
+				F3D16CAB22015BCD00EFF17E /* Comment.swift */,
 				F3327B872201101B007E26AD /* FeedViewController.swift */,
 				F3D16CA72201577600EFF17E /* CommentsViewController.swift */,
 				F3327B9922011231007E26AD /* TableViewCell.swift */,
@@ -156,6 +159,7 @@
 				F3327B9A22011231007E26AD /* TableViewCell.swift in Sources */,
 				F3327B882201101B007E26AD /* FeedViewController.swift in Sources */,
 				F3327B862201101B007E26AD /* AppDelegate.swift in Sources */,
+				F3D16CAC22015BCD00EFF17E /* Comment.swift in Sources */,
 				F3D16CA42201146600EFF17E /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

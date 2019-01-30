@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		F3327B862201101B007E26AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3327B852201101B007E26AD /* AppDelegate.swift */; };
-		F3327B882201101B007E26AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3327B872201101B007E26AD /* ViewController.swift */; };
+		F3327B882201101B007E26AD /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3327B872201101B007E26AD /* FeedViewController.swift */; };
 		F3327B8D2201101C007E26AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3327B8C2201101C007E26AD /* Assets.xcassets */; };
 		F3327B902201101C007E26AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3327B8E2201101C007E26AD /* LaunchScreen.storyboard */; };
 		F3327B982201110C007E26AD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3327B972201110C007E26AD /* Extension.swift */; };
 		F3327B9A22011231007E26AD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3327B9922011231007E26AD /* TableViewCell.swift */; };
 		F3D16CA42201146600EFF17E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D16CA32201146500EFF17E /* Post.swift */; };
 		F3D16CA622014DD200EFF17E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D16CA522014DD200EFF17E /* NetworkManager.swift */; };
+		F3D16CA82201577600EFF17E /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D16CA72201577600EFF17E /* CommentsViewController.swift */; };
+		F3D16CAA2201591800EFF17E /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D16CA92201591800EFF17E /* CommentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F3327B822201101B007E26AD /* ProductHunt-API-Network-Layer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ProductHunt-API-Network-Layer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3327B852201101B007E26AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F3327B872201101B007E26AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F3327B872201101B007E26AD /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		F3327B8C2201101C007E26AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3327B8F2201101C007E26AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3327B912201101C007E26AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		F3327B9922011231007E26AD /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F3D16CA32201146500EFF17E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F3D16CA522014DD200EFF17E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F3D16CA72201577600EFF17E /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		F3D16CA92201591800EFF17E /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +66,10 @@
 			children = (
 				F3327B852201101B007E26AD /* AppDelegate.swift */,
 				F3D16CA32201146500EFF17E /* Post.swift */,
-				F3327B872201101B007E26AD /* ViewController.swift */,
+				F3327B872201101B007E26AD /* FeedViewController.swift */,
+				F3D16CA72201577600EFF17E /* CommentsViewController.swift */,
 				F3327B9922011231007E26AD /* TableViewCell.swift */,
+				F3D16CA92201591800EFF17E /* CommentTableViewCell.swift */,
 				F3D16CA522014DD200EFF17E /* NetworkManager.swift */,
 				F3327B8C2201101C007E26AD /* Assets.xcassets */,
 				F3327B8E2201101C007E26AD /* LaunchScreen.storyboard */,
@@ -145,8 +151,10 @@
 			files = (
 				F3D16CA622014DD200EFF17E /* NetworkManager.swift in Sources */,
 				F3327B982201110C007E26AD /* Extension.swift in Sources */,
+				F3D16CA82201577600EFF17E /* CommentsViewController.swift in Sources */,
+				F3D16CAA2201591800EFF17E /* CommentTableViewCell.swift in Sources */,
 				F3327B9A22011231007E26AD /* TableViewCell.swift in Sources */,
-				F3327B882201101B007E26AD /* ViewController.swift in Sources */,
+				F3327B882201101B007E26AD /* FeedViewController.swift in Sources */,
 				F3327B862201101B007E26AD /* AppDelegate.swift in Sources */,
 				F3D16CA42201146600EFF17E /* Post.swift in Sources */,
 			);

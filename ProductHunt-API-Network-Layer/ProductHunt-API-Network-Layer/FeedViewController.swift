@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FeedViewController.swift
 //  ProductHunt-API-Network-Layer
 //
 //  Created by timofey makhlay on 1/29/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FeedViewController: UIViewController {
 
     // Creating Navbar
     private let navbar: UIView = {
@@ -111,7 +111,7 @@ class ViewController: UIViewController {
 
 
 
-extension ViewController: UITableViewDataSource {
+extension FeedViewController: UITableViewDataSource {
     // Table View Rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
@@ -130,9 +130,10 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print(indexPath.row)
+//        let post = posts[indexPath.row]
+//    }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -141,12 +142,21 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension FeedViewController: UITableViewDelegate {
     //     Table View Cell Styling
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 250
     }
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        print("Deselected")
+//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//        print("Deselected")
+//        let post = posts[indexPath.row]
+//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = posts[indexPath.row]
+        print(indexPath.row)
+        
+        var commentsView = CommentsViewController()
+        commentsView.comments = ["Blah blah blah!", "Good app.", "Wow."]
+        self.present(commentsView, animated: true)
     }
 }

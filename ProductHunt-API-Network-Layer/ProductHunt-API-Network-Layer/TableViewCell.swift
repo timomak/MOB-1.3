@@ -12,7 +12,7 @@ class TableViewCell: UITableViewCell {
     var name: UITextView = {
         var title = UITextView()
         title.text = "name"
-        title.font = UIFont(name: "AvenirNext-Bold", size: 25)
+        title.font = UIFont(name: "AvenirNext-Bold", size: 16)
         title.textColor = #colorLiteral(red: 0.1075617597, green: 0.09771008044, blue: 0.1697227657, alpha: 1)
         title.backgroundColor = nil
         title.textAlignment = .center
@@ -51,7 +51,7 @@ class TableViewCell: UITableViewCell {
     var botLabel: UITextView = {
         var title = UITextView()
         title.text = "Label"
-        title.font = UIFont(name: "AvenirNext-Bold", size: 16)
+        title.font = UIFont(name: "AvenirNext-Bold", size: 14)
         title.textColor = #colorLiteral(red: 0.1075617597, green: 0.09771008044, blue: 0.1697227657, alpha: 1)
         title.backgroundColor = nil
         title.textAlignment = .center

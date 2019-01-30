@@ -39,13 +39,20 @@ class ViewController: UIViewController {
     var tableView = UITableView()
     
     
-    var mockData: [Post] = {
-        var meTube = Post(id: 0, name: "MeTube", tagline: "Stream videos for free!", votesCount: 25, commentsCount: 4)
-        var boogle = Post(id: 1, name: "Boogle", tagline: "Search anything!", votesCount: 1000, commentsCount: 50)
-        var meTunes = Post(id: 2, name: "meTunes", tagline: "Listen to any song!", votesCount: 25000, commentsCount: 590)
-        
-        return [meTube, boogle, meTunes]
-    }()
+//    var mockData: [Post] = {
+////        var meTube = Post(id: 0, name: "MeTube", tagline: "Stream videos for free!", votesCount: 25, commentsCount: 4)
+////        var boogle = Post(id: 1, name: "Boogle", tagline: "Search anything!", votesCount: 1000, commentsCount: 50)
+////        var meTunes = Post(id: 2, name: "meTunes", tagline: "Listen to any song!", votesCount: 25000, commentsCount: 590)
+////
+////        return [meTube, boogle, meTunes]
+//    }()
+    var posts: [Post] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    var networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +60,13 @@ class ViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         setupNavbar()
         addTableView()
+        updateFeed()
+    }
+    
+    func updateFeed() {
+        networkManager.getPosts() { result in
+            self.posts = result
+        }
     }
     
     func setupNavbar() {
@@ -100,7 +114,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     // Table View Rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mockData.count
+        return posts.count
     }
 
     // Table View Cells
@@ -108,7 +122,7 @@ extension ViewController: UITableViewDataSource {
         // Create Cells one by one using this as a blueprint.
         var cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TableViewCell
 
-        let post = mockData[indexPath.row]
+        let post = posts[indexPath.row]
         // Set the cell label text
         cell.post = post
 //        cell.selectionStyle = .none

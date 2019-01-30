@@ -11,7 +11,7 @@ import Foundation
 class NetworkManager {
     let urlSession = URLSession.shared
     var baseURL = "https://api.producthunt.com/v1/"
-    var token = "replace-me-with-your-token-from-product-hunt-api-dashboard-🙏"
+    var token = "03d3113b03aed2378d7bfb46d6706f5f02588936fbcac830dfed93946732aa75"
     
     func getPosts(completion: @escaping ([Post]) -> Void) {
         let query = "posts/all?sort_by=votes_count&order=desc&search[featured]=true&per_page=20"

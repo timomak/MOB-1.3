@@ -74,7 +74,7 @@ class TableViewCell: UITableViewCell {
             botLabel.text = post.tagline
             comments.text = "Comments: \(post.commentsCount)"
             votes.text = "Votes: \(post.votesCount)"
-            updatePreviewImage()
+//            updatePreviewImage()
         }
     }
     
@@ -86,7 +86,7 @@ class TableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         addSubview(name)
-        name.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: nil,padding: .init(top: 5, left: 15, bottom: 0, right: 0))
+        name.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: nil,padding: .init(top: 2, left: 15, bottom: 0, right: 0))
         
         let labelStack = UIStackView(arrangedSubviews: [comments, votes])
         labelStack.alignment = .center
@@ -101,7 +101,9 @@ class TableViewCell: UITableViewCell {
         
         
         addSubview(cellImage)
-        cellImage.anchor(top: name.bottomAnchor, leading: leadingAnchor, bottom: botLabel.topAnchor, trailing: trailingAnchor, padding: .init(top: 10, left: 10, bottom: 10, right: 10))
+//        cellImage.anchor(top: name.bottomAnchor, leading: leadingAnchor, bottom: botLabel.topAnchor, trailing: trailingAnchor, padding: .init(top: 10, left: 10, bottom: 10, right: 10))
+        cellImage.centerHorizontalOfView(to: self)
+        cellImage.anchor(top: name.bottomAnchor, leading: nil, bottom: nil, trailing: nil, padding: .init(top: 2, left: 0, bottom: 0, right: 0), size: .init(width: 350, height: 160))
     }
     
     // Required with initilizer

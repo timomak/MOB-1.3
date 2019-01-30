@@ -38,6 +38,15 @@ class ViewController: UIViewController {
     // Creating table view
     var tableView = UITableView()
     
+    
+    var mockData: [Post] = {
+        var meTube = Post(id: 0, name: "MeTube", tagline: "Stream videos for free!", votesCount: 25, commentsCount: 4)
+        var boogle = Post(id: 1, name: "Boogle", tagline: "Search anything!", votesCount: 1000, commentsCount: 50)
+        var meTunes = Post(id: 2, name: "meTunes", tagline: "Listen to any song!", votesCount: 25000, commentsCount: 590)
+        
+        return [meTube, boogle, meTunes]
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -91,7 +100,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     // Table View Rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return mockData.count
     }
 
     // Table View Cells
@@ -99,8 +108,9 @@ extension ViewController: UITableViewDataSource {
         // Create Cells one by one using this as a blueprint.
         var cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TableViewCell
 
+        let post = mockData[indexPath.row]
         // Set the cell label text
-        cell.name.text = "Products"
+        cell.post = post
 //        cell.selectionStyle = .none
         // Push your cell to the table view
         return cell
